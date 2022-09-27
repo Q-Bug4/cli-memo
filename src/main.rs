@@ -1,3 +1,12 @@
+#![allow(unused)]
+use structopt::StructOpt;
+
+#[derive(StructOpt)]
+struct Cli {
+    cmd: String,
+}
+
 fn main() {
-    println!("Hello, world!");
+    let args = Cli::from_args();
+    let cmd = args.cmd;
 }
