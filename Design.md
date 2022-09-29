@@ -11,8 +11,8 @@ Users can
 ```typescript
 memo = {
     name: String,
-    language: String,
     content: String,
+    language: Language,
     source_type: InputSourceEnum,
     result_type: OutputResultEnum,
 }
@@ -20,9 +20,9 @@ memo = {
 
 ## Data source
 1. files
-2. pick from history
-3. files
-4. user's keyboard input
+2. filesystem
+3. pick from history
+4. text
 
 ## Storage
 rust sqlite
