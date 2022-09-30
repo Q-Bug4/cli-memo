@@ -25,4 +25,4 @@ memo = {
 4. text
 
 ## Storage
-rust sqlite
+filesystem
