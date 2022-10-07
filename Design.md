@@ -19,10 +19,10 @@ memo = {
 ```
 
 ## Data source
-1. files
-2. filesystem
-3. pick from history
-4. text
+1. files / folders
+2. pick from history
+3. text
+4. network
 
 ## Storage
 filesystem
