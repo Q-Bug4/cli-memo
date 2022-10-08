@@ -25,4 +25,5 @@ memo = {
 4. network
 
 ## Storage
-filesystem
+1. sqlite 
+2. filesystem
