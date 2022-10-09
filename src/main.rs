@@ -2,6 +2,10 @@
 use structopt::StructOpt;
 #[path ="./test/memo_manager.rs"]
 mod test_memo_manager;
+mod memo;
+mod constant;
+mod memo_manager;
+mod util;
 
 #[derive(StructOpt)]
 struct Cli {
