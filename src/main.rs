@@ -6,6 +6,7 @@ mod memo;
 mod constant;
 mod memo_manager;
 mod util;
+mod memo_sql_helper;
 
 #[derive(StructOpt)]
 struct Cli {

@@ -18,7 +18,7 @@ mod memo_manager_test {
             source_type: InputSourceEnum::Text,
             result_type: OutputResultEnum::Text
         };
-        let mut path: PathBuf = dirs::home_dir().expect("/home/kael/tmp/1");
+        let mut path: PathBuf = dirs::home_dir().expect("cant get home dir");
         path.push("tmp");
         memo_manager::saveMemoToDisk(memo, path);
     }
