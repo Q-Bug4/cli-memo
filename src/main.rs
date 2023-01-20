@@ -1,5 +1,11 @@
 #![allow(unused)]
+
+mod memo;
+mod constant;
+
 use structopt::StructOpt;
+use crate::memo::Memo;
+use crate::constant::{InputSourceEnum, Language, OutputResultEnum};
 
 #[derive(StructOpt)]
 struct Cli {
@@ -7,6 +13,12 @@ struct Cli {
 }
 
 fn main() {
-    let args = Cli::from_args();
-    let cmd = args.cmd;
+    let memo = Memo {
+        name: "TestMemo".to_string(),
+        content: "test1".to_string(),
+        language: Language::JavaScript,
+        source_type: InputSourceEnum::Text,
+        result_type: OutputResultEnum::Text,
+    };
+    memo.insert();
 }
