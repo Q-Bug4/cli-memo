@@ -2,6 +2,7 @@ use std::str::FromStr;
 use strum_macros::EnumString;
 
 #[derive(EnumString)]
+#[derive(Debug)]
 pub enum Language {
     #[strum(ascii_case_insensitive)]
     Python,
@@ -15,6 +16,7 @@ pub enum Language {
 }
 
 #[derive(EnumString)]
+#[derive(Debug)]
 pub enum InputSourceEnum {
     #[strum(ascii_case_insensitive)]
     Text,
@@ -30,6 +32,7 @@ pub enum InputSourceEnum {
 }
 
 #[derive(EnumString)]
+#[derive(Debug)]
 pub enum OutputResultEnum {
     #[strum(ascii_case_insensitive)]
     Text,
@@ -42,6 +45,7 @@ pub enum OutputResultEnum {
 }
 
 #[derive(EnumString)]
+#[derive(Debug)]
 pub enum Command {
     List,
     Create,

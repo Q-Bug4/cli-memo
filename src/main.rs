@@ -1,5 +1,10 @@
 #![allow(unused)]
+
+mod constant;
+
 use structopt::StructOpt;
+use crate::memo::Memo;
+use crate::constant::{InputSourceEnum, Language, OutputResultEnum};
 
 #[derive(StructOpt)]
 struct Cli {
@@ -7,6 +12,4 @@ struct Cli {
 }
 
 fn main() {
-    let args = Cli::from_args();
-    let cmd = args.cmd;
 }
