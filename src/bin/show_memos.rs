@@ -9,9 +9,10 @@ fn main() {
     let results = memos
         .limit(5)
         .load::<Memo>(connection)
-        .expect("Error loading posts");
+        .expect("Error loading memos");
 
-    println!("Displaying {} posts", results.len());
+    println!("Displaying {} memos", results.len());
+
     for memo in results {
         println!("{}", memo.name);
         println!("-----------\n");
