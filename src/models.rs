@@ -1,6 +1,7 @@
 use diesel::prelude::*;
 use crate::schema::memos;
 
+
 #[derive(Queryable)]
 pub struct Memo {
     pub id: i32,

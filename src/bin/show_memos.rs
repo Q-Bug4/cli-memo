@@ -12,6 +12,7 @@ fn main() {
         .expect("Error loading memos");
 
     println!("Displaying {} memos", results.len());
+
     for memo in results {
         println!("{}", memo.name);
         println!("-----------\n");

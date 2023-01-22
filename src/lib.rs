@@ -8,6 +8,7 @@ use crate::models::{Memo, NewMemo, UpdateMemo};
 use crate::schema::memos;
 use crate::schema::memos::{id};
 
+
 pub fn establish_connection() -> SqliteConnection {
     dotenv().ok();
 
@@ -15,6 +16,7 @@ pub fn establish_connection() -> SqliteConnection {
     SqliteConnection::establish(&database_url)
         .unwrap_or_else(|_| panic!("Error connecting to {}", database_url))
 }
+
 
 pub fn create_memo(conn: &mut SqliteConnection, memo: &Memo) {
     let new_memo = NewMemo {
