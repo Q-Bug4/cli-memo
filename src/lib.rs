@@ -4,6 +4,7 @@ pub mod schema;
 use diesel::prelude::*;
 use dotenvy::dotenv;
 use std::env;
+use std::process::Command;
 use crate::models::{Memo, NewMemo, UpdateMemo};
 use crate::schema::memos;
 use crate::schema::memos::{id};
@@ -46,4 +47,15 @@ pub fn delete_memo(conn: &mut SqliteConnection, memo_id: i32) {
         .filter(id.is(memo_id))
         .execute(conn)
         .expect(&format!("Error deleting memo with id: {}", memo_id));
+}
+
+pub fn exec_python_script(script_path: &str) -> String {
+    let output = Command::new("python")
+        .arg(script_path)
+        .output()
+        .expect("failed to execute process");
+    match String::from_utf8(output.stdout) {
+        Ok(v) => v,
+        Err(e) => panic!("Fail to read from utf-8, {}", e),
+    }
 }
