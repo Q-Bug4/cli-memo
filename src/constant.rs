@@ -1,1 +1,1 @@
-const DEFAULT_SCRIPT_FOLDER: &str = "cli-memo";
+pub const DEFAULT_SCRIPT_FOLDER: &str = "cli-memo";

@@ -1,10 +1,13 @@
 pub mod models;
 pub mod schema;
+pub mod constant;
 
 use diesel::prelude::*;
 use dotenvy::dotenv;
-use std::env;
+use std::{env, fs};
+use std::path::Path;
 use std::process::Command;
+use crate::constant::DEFAULT_SCRIPT_FOLDER;
 use crate::models::{Memo, NewMemo, UpdateMemo};
 use crate::schema::memos;
 use crate::schema::memos::{id};
@@ -58,4 +61,10 @@ pub fn exec_python_script(script_path: &str) -> String {
         Ok(v) => v,
         Err(e) => panic!("Fail to read from utf-8, {}", e),
     }
+}
+
+pub fn init_script_files() {
+    let HOME_DIR = dirs::home_dir().expect("Fail to get home dir");
+    let script_path = HOME_DIR.as_path().join(constant::DEFAULT_SCRIPT_FOLDER);
+    fs::create_dir_all(script_path.to_str().unwrap()).expect("Fail to init cli-memo dir");
 }
