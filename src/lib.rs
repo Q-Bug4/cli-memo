@@ -64,7 +64,7 @@ pub fn exec_python_script(script_path: &str) -> String {
 }
 
 pub fn init_script_files() {
-    let HOME_DIR = dirs::home_dir().expect("Fail to get home dir");
-    let script_path = HOME_DIR.as_path().join(constant::DEFAULT_SCRIPT_FOLDER);
+    let home_dir = dirs::home_dir().expect("Fail to get home dir");
+    let script_path = home_dir.as_path().join(constant::DEFAULT_SCRIPT_FOLDER);
     fs::create_dir_all(script_path.to_str().unwrap()).expect("Fail to init cli-memo dir");
 }
